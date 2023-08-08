@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="joo2">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
+    <path id="joo2.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <path id="run.binaryExample.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.BitLogicaExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.ByteExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.castExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.CharExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.DenyLogicalOperExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.FloatDoubleExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.intExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.intExam2.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.longExam.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <path id="run.TypeClass.classpath">
+        <path refid="joo2.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="joo2.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="binaryExample">
+        <java classname="com.tect.a01.binaryExample" failonerror="true" fork="yes">
+            <classpath refid="run.binaryExample.classpath"/>
+        </java>
+    </target>
+    <target name="BitLogicaExam">
+        <java classname="com.tect.a02.BitLogicaExam" failonerror="true" fork="yes">
+            <classpath refid="run.BitLogicaExam.classpath"/>
+        </java>
+    </target>
+    <target name="ByteExam">
+        <java classname="com.tect.a01.ByteExam" failonerror="true" fork="yes">
+            <classpath refid="run.ByteExam.classpath"/>
+        </java>
+    </target>
+    <target name="castExam">
+        <java classname="com.tect.a02.castExam" failonerror="true" fork="yes">
+            <classpath refid="run.castExam.classpath"/>
+        </java>
+    </target>
+    <target name="CharExam">
+        <java classname="com.tect.a02.CharExam" failonerror="true" fork="yes">
+            <classpath refid="run.CharExam.classpath"/>
+        </java>
+    </target>
+    <target name="DenyLogicalOperExam">
+        <java classname="com.tect.a02.DenyLogicalOperExam" failonerror="true" fork="yes">
+            <classpath refid="run.DenyLogicalOperExam.classpath"/>
+        </java>
+    </target>
+    <target name="FloatDoubleExam">
+        <java classname="com.tect.a01.FloatDoubleExam" failonerror="true" fork="yes">
+            <classpath refid="run.FloatDoubleExam.classpath"/>
+        </java>
+    </target>
+    <target name="intExam">
+        <java classname="com.tect.a01.intExam" failonerror="true" fork="yes">
+            <classpath refid="run.intExam.classpath"/>
+        </java>
+    </target>
+    <target name="intExam2">
+        <java classname="com.tect.a01.intExam2" failonerror="true" fork="yes">
+            <classpath refid="run.intExam2.classpath"/>
+        </java>
+    </target>
+    <target name="longExam">
+        <java classname="com.tect.a02.longExam" failonerror="true" fork="yes">
+            <classpath refid="run.longExam.classpath"/>
+        </java>
+    </target>
+    <target name="TypeClass">
+        <java classname="com.tect.a01.TypeClass" failonerror="true" fork="yes">
+            <classpath refid="run.TypeClass.classpath"/>
+        </java>
+    </target>
+</project>
